@@ -6,13 +6,8 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
-@Getter
-@Setter
+@Data
 @SuperBuilder
-@NoArgsConstructor
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@ToString
-@EqualsAndHashCode()
 public class Car implements Serializable {
     private Long id;
     private String brand;

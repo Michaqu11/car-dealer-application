@@ -35,8 +35,4 @@ public class SalonRepository implements Repo<Salon, Long> {
         store.deleteSalon(salon.getId());
     }
 
-//    @Override
-//    public void update(Salon salon) {
-//        store.updateSalon(salon);
-//    }
 }

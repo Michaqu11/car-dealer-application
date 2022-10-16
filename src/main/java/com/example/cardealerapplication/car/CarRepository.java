@@ -33,9 +33,5 @@ public class CarRepository implements Repo<Car, Long> {
         store.deleteCar(car.getId());
     }
 
-//    @Override
-//    public void update(Car car) {
-//        store.updateCar(car);
-//    }
 
 }

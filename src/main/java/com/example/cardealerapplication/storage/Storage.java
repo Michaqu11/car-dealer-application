@@ -29,18 +29,6 @@ public class Storage {
         salons.add(salon);
     }
 
-//    public synchronized void updateSalon(Salon salon) throws IllegalArgumentException {
-//        findSalon(salon.getId()).ifPresentOrElse(
-//                original -> {
-//                    salons.remove(original);
-//                    salons.add(salon);
-//                },
-//                () -> {
-//                    throw new IllegalArgumentException(
-//                            String.format("The character with id \"%d\" does not exist", salon.getId()));
-//                });
-//    }
-
     public synchronized void deleteSalon(Long id) throws IllegalArgumentException {
         findSalon(id).ifPresentOrElse(
                 salons::remove,
@@ -69,17 +57,6 @@ public class Storage {
         cars.add(car);
     }
 
-//    public synchronized void updateCar(Car car) throws IllegalArgumentException {
-//        findCar(car.getId()).ifPresentOrElse(
-//                original -> {
-//                    cars.remove(original);
-//                    cars.add(car);
-//                },
-//                () -> {
-//                    throw new IllegalArgumentException(
-//                            String.format("The character with id \"%d\" does not exist", car.getId()));
-//                });
-//    }
 
     public synchronized void deleteCar(Long id) throws IllegalArgumentException {
         findCar(id).ifPresentOrElse(

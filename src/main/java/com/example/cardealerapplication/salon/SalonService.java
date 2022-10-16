@@ -27,7 +27,4 @@ public class SalonService {
         repository.delete(repository.find(salon.getId()).orElseThrow());
     }
 
-//    public void update(Salon salon) {
-//        repository.update(salon);
-//    }
 }
