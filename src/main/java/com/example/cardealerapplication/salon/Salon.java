@@ -4,7 +4,10 @@ package com.example.cardealerapplication.salon;
 import com.example.cardealerapplication.car.Car;
 import lombok.*;
 
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
+
 @Getter
 @Setter
 @Builder
@@ -12,10 +15,19 @@ import java.io.Serializable;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @EqualsAndHashCode
-public class Salon  implements Serializable {
+@Entity
+@Table(name = "salons")
+public class Salon implements Serializable {
+    @Id
+    @GeneratedValue(
+            strategy = GenerationType.TABLE)
     private Long id;
     private String name;
     private String adress;
+
+
+    @OneToMany(mappedBy = "salon")
+    private Set<Car> cars;
 
 
 }
