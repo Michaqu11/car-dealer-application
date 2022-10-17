@@ -18,14 +18,14 @@ public class GetSalonResponse {
 
     private Long id;
     private String name;
-    private String adress;
+    private String address;
     private Set<Car> cars;
 
     public static Function<Salon, GetSalonResponse> entityToDtoMapper() {
         return salon -> GetSalonResponse.builder()
                 .id(salon.getId())
                 .name(salon.getName())
-                .adress(salon.getAdress())
+                .address(salon.getAddress())
                 .cars(salon.getCars())
                 .build();
     }

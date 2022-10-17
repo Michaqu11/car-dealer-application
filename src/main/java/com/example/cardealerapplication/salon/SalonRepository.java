@@ -11,16 +11,7 @@ import java.util.Optional;
 @Repository
 public interface SalonRepository extends JpaRepository<Salon, Long> {
 
+    Optional<Salon> findById(Long id);
 
 
-
-    Optional<Salon> find(Long id);
-
-    List<Salon> findAll();
-
-    void create(Salon salon);
-
-    void delete(Salon salon);
-
-    void update(Salon salon);
 }

@@ -23,7 +23,7 @@ public class Salon implements Serializable {
             strategy = GenerationType.TABLE)
     private Long id;
     private String name;
-    private String adress;
+    private String address;
 
 
     @OneToMany(mappedBy = "salon")

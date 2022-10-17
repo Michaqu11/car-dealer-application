@@ -7,6 +7,7 @@ import com.example.cardealerapplication.salon.Salon;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.util.Set;
 import java.util.function.Function;
 
 @Getter
@@ -19,12 +20,14 @@ import java.util.function.Function;
 public class CreateSalonRequest {
 
     private String name;
-    private String adress;
+    private String address;
+    private Set<Car> cars;
 
     public static Function<CreateSalonRequest, Salon> dtoToEntityMapper() {
         return request -> Salon.builder()
                 .name(request.getName())
-                .adress(request.getAdress())
+                .address(request.getAddress())
+                .cars(request.getCars())
                 .build();
     }
 }

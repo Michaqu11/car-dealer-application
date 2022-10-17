@@ -15,12 +15,12 @@ import java.util.function.BiFunction;
 @EqualsAndHashCode
 public class UpdateSalonRequest {
     private String name;
-    private String adress;
+    private String address;
 
     public static BiFunction<Salon, UpdateSalonRequest, Salon> dtoToEntityUpdater() {
         return (salon, request) -> {
             salon.setName(request.getName());
-            salon.setAdress(request.getAdress());
+            salon.setAddress(request.getAddress());
             return salon;
         };
     }

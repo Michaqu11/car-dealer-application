@@ -22,7 +22,7 @@ public class InitializedData {
     private synchronized void init() {
         Salon topCars = Salon.builder()
                 .name("Top Cars")
-                .adress("Grunwaldzka 123 80-321 Gdańsk")
+                .address("Grunwaldzka 123 80-321 Gdańsk")
                 .build();
 
         Car mercedes = Car.builder()
@@ -49,7 +49,7 @@ public class InitializedData {
 
         Salon bellaCars = Salon.builder()
                 .name("Bella Cars")
-                .adress("Świętokrzyska 5 47-231 Nidzica")
+                .address("Świętokrzyska 5 47-231 Nidzica")
                 .build();
 
         Car mercedes1 = Car.builder()

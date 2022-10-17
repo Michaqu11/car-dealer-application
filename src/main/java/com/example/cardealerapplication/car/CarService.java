@@ -1,15 +1,14 @@
 package com.example.cardealerapplication.car;
 
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 @RequiredArgsConstructor
 @Service
 public class CarService {
+
     private final CarRepository repository;
 
     public List<Car> findAll() {
@@ -17,15 +16,17 @@ public class CarService {
     }
 
     public Optional<Car> find(Long id) {
-        return repository.find(id);
+        return repository.findById(id);
     }
-    public void create(Car car) {
-        repository.create(car);
+    public Car create(Car car) {
+        return repository.save(car);
     }
+
     public void update(Car car) {
-        repository.update(car);
+        repository.save(car);
     }
+
     public void delete(Car car) {
-        repository.delete(repository.find(car.getId()).orElseThrow());
+        repository.deleteById(car.getId());
     }
 }

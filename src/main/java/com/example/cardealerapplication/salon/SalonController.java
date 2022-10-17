@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/salon")
+@RequestMapping("salon")
 public class SalonController {
 
     private SalonService salonService;
@@ -37,7 +37,7 @@ public class SalonController {
     public ResponseEntity<Void> createSalon(@RequestBody CreateSalonRequest request, UriComponentsBuilder builder) {
         Salon salon = (Salon) CreateSalonRequest.dtoToEntityMapper();
         salonService.create(salon);
-        return ResponseEntity.created(builder.pathSegment("api", "car", "{id}").buildAndExpand(salon.getId()).toUri()).build();
+        return ResponseEntity.created(builder.pathSegment( "salon", "{id}").buildAndExpand(salon.getId()).toUri()).build();
     }
 
     @DeleteMapping("{id}")
