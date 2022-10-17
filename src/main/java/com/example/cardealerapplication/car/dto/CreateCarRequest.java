@@ -19,14 +19,16 @@ public class CreateCarRequest {
     private String brand;
     private String model;
     private double maxSpeed;
-    private Salon salon;
+    private Long salonID;
 
-    public static Function<CreateCarRequest, Car> dtoToEntityMapper() {
+    public static Function<CreateCarRequest, Car> dtoToEntityMapper(
+            Function<Long, Salon> salonFunction
+    ) {
         return request -> Car.builder()
                 .brand(request.getBrand())
                 .model(request.getModel())
                 .maxSpeed(request.getMaxSpeed())
-                .salon(request.getSalon())
+                .salon(salonFunction.apply(request.getSalonID()))
                 .build();
     }
 

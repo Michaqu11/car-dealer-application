@@ -4,6 +4,7 @@ import com.example.cardealerapplication.car.CarService;
 import com.example.cardealerapplication.car.dto.CreateCarRequest;
 import com.example.cardealerapplication.car.dto.GetCarResponse;
 import com.example.cardealerapplication.car.dto.UpdateCarRequest;
+import com.example.cardealerapplication.salon.SalonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import java.util.Optional;
 public class CarController {
 
     private CarService carService;
+    private SalonService salonService;
 
     @GetMapping
     public ResponseEntity<GetCarResponse> getCar() {
@@ -32,8 +34,7 @@ public class CarController {
 
     @PostMapping
     public ResponseEntity<Void> createCar(@RequestBody CreateCarRequest request, UriComponentsBuilder builder) {
-        Car car = (Car) CreateCarRequest
-                .dtoToEntityMapper();
+        Car car = CreateCarRequest.dtoToEntityMapper(name -> salonService.find(name).orElseThrow()).apply(request);
         carService.create(car);
         return ResponseEntity.created(builder.pathSegment("api", "car", "{id}").buildAndExpand(car.getId()).toUri()).build();
     }
