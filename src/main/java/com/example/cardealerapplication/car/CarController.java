@@ -3,16 +3,17 @@ package com.example.cardealerapplication.car;
 import com.example.cardealerapplication.car.CarService;
 import com.example.cardealerapplication.car.dto.CreateCarRequest;
 import com.example.cardealerapplication.car.dto.GetCarResponse;
+import com.example.cardealerapplication.car.dto.GetCarsResponse;
 import com.example.cardealerapplication.car.dto.UpdateCarRequest;
 import com.example.cardealerapplication.salon.SalonService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/car")
 public class CarController {
@@ -20,15 +21,21 @@ public class CarController {
     private CarService carService;
     private SalonService salonService;
 
+    @Autowired
+    public CarController(CarService carService, SalonService salonService) {
+        this.carService = carService;
+        this.salonService = salonService;
+    }
+
     @GetMapping
-    public ResponseEntity<GetCarResponse> getCar() {
-        return ResponseEntity.ok(GetCarResponse.entityToDtoMapper().apply((Car) carService.findAll()));
+    public ResponseEntity<GetCarsResponse> getCars() {
+        return ResponseEntity.ok(GetCarsResponse.entityToDtoMapper().apply(carService.findAll()));
     }
 
     @GetMapping("{id}")
     public ResponseEntity<GetCarResponse> getCar(@PathVariable("id") long id) {
-        Optional<Car> character = carService.find(id);
-        return character.map(value -> ResponseEntity.ok(GetCarResponse.entityToDtoMapper().apply(value)))
+        Optional<Car> car = carService.find(id);
+        return car.map(value -> ResponseEntity.ok(GetCarResponse.entityToDtoMapper().apply(value)))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
@@ -36,7 +43,7 @@ public class CarController {
     public ResponseEntity<Void> createCar(@RequestBody CreateCarRequest request, UriComponentsBuilder builder) {
         Car car = CreateCarRequest.dtoToEntityMapper(name -> salonService.find(name).orElseThrow()).apply(request);
         carService.create(car);
-        return ResponseEntity.created(builder.pathSegment("api", "car", "{id}").buildAndExpand(car.getId()).toUri()).build();
+        return ResponseEntity.created(builder.pathSegment( "car").buildAndExpand(car.getId()).toUri()).build();
     }
 
     @DeleteMapping("{id}")

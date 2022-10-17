@@ -16,11 +16,13 @@ import java.util.function.Function;
 @EqualsAndHashCode
 public class GetCarResponse {
 
+
+
     private Long id;
     private String brand;
     private String model;
     private double maxSpeed;
-    private Salon salon;
+//    private Salon salon;
 
     public static Function<Car, GetCarResponse> entityToDtoMapper() {
         return car -> GetCarResponse.builder()
@@ -28,7 +30,7 @@ public class GetCarResponse {
                 .brand(car.getBrand())
                 .model(car.getModel())
                 .maxSpeed(car.getMaxSpeed())
-                .salon(car.getSalon())
+//                .salon(car.getSalon())
                 .build();
     }
 }

@@ -6,24 +6,29 @@ import com.example.cardealerapplication.car.dto.GetCarResponse;
 import com.example.cardealerapplication.car.dto.UpdateCarRequest;
 import com.example.cardealerapplication.salon.dto.CreateSalonRequest;
 import com.example.cardealerapplication.salon.dto.GetSalonResponse;
+import com.example.cardealerapplication.salon.dto.GetSalonsResponse;
 import com.example.cardealerapplication.salon.dto.UpdateSalonRequest;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Optional;
 
-@RequiredArgsConstructor
 @RestController
-@RequestMapping("salon")
+@RequestMapping("/salon")
 public class SalonController {
 
     private SalonService salonService;
 
+    @Autowired
+    public SalonController(SalonService salonService){
+        this.salonService = salonService;
+    }
+
     @GetMapping
-    public ResponseEntity<GetSalonResponse> getSalon() {
-        return ResponseEntity.ok(GetSalonResponse.entityToDtoMapper().apply((Salon) salonService.findAll()));
+    public ResponseEntity<GetSalonsResponse> getSalon() {
+        return ResponseEntity.ok(GetSalonsResponse.entityToDtoMapper().apply(salonService.findAll()));
     }
 
     @GetMapping("{id}")
