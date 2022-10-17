@@ -2,9 +2,6 @@ GET http://localhost:8080/car
 
 ###
 
-GET http://localhost:8080/car
-
-###
 
 GET http://localhost:8080/car/5
 
