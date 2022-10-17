@@ -3,39 +3,28 @@ package com.example.cardealerapplication.car;
 import com.example.cardealerapplication.repository.Repo;
 import com.example.cardealerapplication.storage.Storage;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
 @Repository
-public class CarRepository implements Repo<Car, Long> {
-    private final Storage store;
+public interface CarRepository extends JpaRepository<Car, Long> {
 
-    @Override
-    public Optional<Car> find(Long id) {
-        return store.findCar(id);
-    }
 
-    @Override
-    public List<Car> findAll() {
-        return store.findAllCars();
-    }
+    Optional<Car> find(Long id);
 
-    @Override
-    public void create(Car car) {
-        store.createCar(car);
-    }
 
-    @Override
-    public void delete(Car car) {
-        store.deleteCar(car.getId());
-    }
 
-//    @Override
-//    public void update(Car car) {
-//        store.updateCar(car);
-//    }
+     List<Car> findAll();
+
+
+     void create(Car car);
+
+
+     void delete(Car car);
+
+    void update(Car car);
 
 }

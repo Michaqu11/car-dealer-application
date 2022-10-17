@@ -1,5 +1,6 @@
 package com.example.cardealerapplication.car;
 
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +22,9 @@ public class CarService {
     public void create(Car car) {
         repository.create(car);
     }
-//    public void update(Car car) {
-//        repository.update(car);
-//    }
+    public void update(Car car) {
+        repository.update(car);
+    }
     public void delete(Car car) {
         repository.delete(repository.find(car.getId()).orElseThrow());
     }
