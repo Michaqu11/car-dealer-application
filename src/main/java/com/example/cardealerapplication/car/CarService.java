@@ -19,9 +19,7 @@ public class CarService {
     public Optional<Car> find(Long id) {
         return repository.findById(id);
     }
-    public Car create(Car car) {
-        return repository.save(car);
-    }
+    public Car create(Car car) { return repository.save(car); }
 
     public void update(Car car) {
         repository.save(car);

@@ -5,17 +5,25 @@ import com.example.cardealerapplication.car.CarService;
 import com.example.cardealerapplication.salon.Salon;
 import com.example.cardealerapplication.salon.SalonService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 
-@RequiredArgsConstructor
 @Component
 public class InitializedData {
 
+
     private final CarService carService;
     private final SalonService salonService;
+
+    @Autowired
+    public InitializedData(CarService carService, SalonService salonService) {
+        this.carService = carService;
+        this.salonService = salonService;
+    }
+
 
 
     @PostConstruct
@@ -24,6 +32,16 @@ public class InitializedData {
                 .name("Top Cars")
                 .address("Grunwaldzka 123 80-321 Gdańsk")
                 .build();
+
+
+        Salon bellaCars = Salon.builder()
+                .name("Bella Cars")
+                .address("Świętokrzyska 5 47-231 Nidzica")
+                .build();
+
+
+        salonService.create(topCars);
+        salonService.create(bellaCars);
 
         Car mercedes = Car.builder()
                 .brand("Mercedes")
@@ -47,11 +65,6 @@ public class InitializedData {
                 .build();
 
 
-        Salon bellaCars = Salon.builder()
-                .name("Bella Cars")
-                .address("Świętokrzyska 5 47-231 Nidzica")
-                .build();
-
         Car mercedes1 = Car.builder()
                 .brand("Mercedes")
                 .model("E-class")
@@ -66,14 +79,12 @@ public class InitializedData {
                 .salon(bellaCars)
                 .build();
 
-        salonService.create(topCars);
-        salonService.create(bellaCars);
 
-        carService.create(mercedes);
-        carService.create(audi);
-        carService.create(scoda);
-        carService.create(mercedes1);
-        carService.create(bmw);
+//        carService.create(mercedes);
+//        carService.create(audi);
+//        carService.create(scoda);
+//        carService.create(mercedes1);
+//        carService.create(bmw);
 
 
 

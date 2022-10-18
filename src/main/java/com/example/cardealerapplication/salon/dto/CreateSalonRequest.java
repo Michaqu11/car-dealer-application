@@ -21,13 +21,11 @@ public class CreateSalonRequest {
 
     private String name;
     private String address;
-    private Set<Car> cars;
 
     public static Function<CreateSalonRequest, Salon> dtoToEntityMapper() {
         return request -> Salon.builder()
                 .name(request.getName())
                 .address(request.getAddress())
-                .cars(request.getCars())
                 .build();
     }
 }

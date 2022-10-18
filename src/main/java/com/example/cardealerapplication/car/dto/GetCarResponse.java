@@ -22,15 +22,15 @@ public class GetCarResponse {
     private String brand;
     private String model;
     private double maxSpeed;
-    private Salon salon;
+    private String salon;
 
     public static Function<Car, GetCarResponse> entityToDtoMapper() {
         return car -> GetCarResponse.builder()
-                .id(car.getId())
-                .brand(car.getBrand())
-                .model(car.getModel())
-                .maxSpeed(car.getMaxSpeed())
-                .salon(car.getSalon())
-                .build();
+                    .id(car.getId())
+                    .brand(car.getBrand())
+                    .model(car.getModel())
+                    .maxSpeed(car.getMaxSpeed())
+                    .salon(car.getSalon().getName())
+                    .build();
     }
 }

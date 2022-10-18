@@ -31,6 +31,7 @@ public class GetCarsResponse {
         private String brand;
         private String model;
         private double maxSpeed;
+        private String salon;
     }
 
     @Singular
@@ -45,6 +46,7 @@ public class GetCarsResponse {
                             .brand(car.getBrand())
                             .model(car.getModel())
                             .maxSpeed(car.getMaxSpeed())
+                            .salon(car.getSalon().getName())
                             .build())
                     .forEach(response::car);
             return response.build();

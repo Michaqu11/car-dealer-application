@@ -19,13 +19,13 @@ import java.io.Serializable;
 public class Car implements Serializable {
     @Id
     @GeneratedValue(
-            strategy = GenerationType.TABLE)
+            strategy = GenerationType.IDENTITY)
     private Long id;
     private String brand;
     private String model;
     private double maxSpeed;
 
     @ManyToOne()
-    @JoinColumn(name = "salon")
+    @JoinColumn(name = "salon_id",  nullable = false, referencedColumnName = "id")
     private Salon salon;
 }

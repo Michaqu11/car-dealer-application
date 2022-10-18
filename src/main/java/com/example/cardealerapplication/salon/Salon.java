@@ -2,10 +2,12 @@ package com.example.cardealerapplication.salon;
 
 
 import com.example.cardealerapplication.car.Car;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -20,14 +22,14 @@ import java.util.Set;
 public class Salon implements Serializable {
     @Id
     @GeneratedValue(
-            strategy = GenerationType.TABLE)
+            strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String address;
 
-
-    @OneToMany(mappedBy = "salon")
-    private Set<Car> cars;
+    @JsonIgnore
+    @OneToMany(mappedBy = "salon", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Car> cars =  new HashSet<>();
 
 
 }

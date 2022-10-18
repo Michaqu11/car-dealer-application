@@ -41,8 +41,9 @@ public class CarController {
 
     @PostMapping
     public ResponseEntity<Void> createCar(@RequestBody CreateCarRequest request, UriComponentsBuilder builder) {
-        Car car = CreateCarRequest.dtoToEntityMapper(name -> salonService.find(name).orElseThrow()).apply(request);
-        carService.create(car);
+        Car car = CreateCarRequest.dtoToEntityMapper(id -> salonService.find(id).orElseThrow()).apply(request);
+        car = carService.create(car);
+        car.setSalon(car.getSalon());
         return ResponseEntity.created(builder.pathSegment( "car").buildAndExpand(car.getId()).toUri()).build();
     }
 
