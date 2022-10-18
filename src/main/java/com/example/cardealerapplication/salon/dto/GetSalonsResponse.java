@@ -31,7 +31,6 @@ public class GetSalonsResponse {
         private Long id;
         private String name;
         private String address;
-        private Set<Car> cars;
     }
 
     @Singular
@@ -46,7 +45,6 @@ public class GetSalonsResponse {
                             .id(salon.getId())
                             .name(salon.getName())
                             .address(salon.getAddress())
-                            .cars(salon.getCars())
                             .build())
                     .forEach(response::salon);
             return response.build();

@@ -27,7 +27,7 @@ public class SalonController {
     }
 
     @GetMapping
-    public ResponseEntity<GetSalonsResponse> getSalon() {
+    public ResponseEntity<GetSalonsResponse> getSalons() {
         return ResponseEntity.ok(GetSalonsResponse.entityToDtoMapper().apply(salonService.findAll()));
     }
 
