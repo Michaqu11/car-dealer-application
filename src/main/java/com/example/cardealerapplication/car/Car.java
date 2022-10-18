@@ -4,6 +4,7 @@ import com.example.cardealerapplication.salon.Salon;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Getter
@@ -12,11 +13,18 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
-@EqualsAndHashCode()
+@Entity
+@Table(name = "cars")
 public class Car implements Serializable {
+    @Id
+    @GeneratedValue(
+            strategy = GenerationType.IDENTITY)
     private Long id;
     private String brand;
     private String model;
     private double maxSpeed;
+
+    @ManyToOne
+    @JoinColumn(name = "salon_id",  nullable = false, referencedColumnName = "id")
     private Salon salon;
 }
