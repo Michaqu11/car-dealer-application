@@ -16,7 +16,6 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
-@EqualsAndHashCode
 @Entity
 @Table(name = "salons")
 public class Salon implements Serializable {

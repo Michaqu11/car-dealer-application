@@ -9,6 +9,7 @@ import com.example.cardealerapplication.salon.dto.GetSalonResponse;
 import com.example.cardealerapplication.salon.dto.GetSalonsResponse;
 import com.example.cardealerapplication.salon.dto.UpdateSalonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -31,6 +32,19 @@ public class SalonController {
         return ResponseEntity.ok(GetSalonsResponse.entityToDtoMapper().apply(salonService.findAll()));
     }
 
+//    @GetMapping("{id}")
+//    public ResponseEntity<GetSalonResponse> getSalon(@PathVariable("id") long id) {
+//        Salon salon = salonService.find(id).orElseThrow(
+//                () -> new RuntimeException("There is no salon with that ID")
+//        );
+//        GetSalonResponse getSalonResponse = new GetSalonResponse();
+//        getSalonResponse.setId(salon.getId());
+//        getSalonResponse.setName(salon.getName());
+//        getSalonResponse.setAddress(salon.getAddress());
+//        getSalonResponse.setCars(salon.getCars().stream().map(car -> car.getBrand() + " " + car.getModel()).toList());
+//        return new ResponseEntity<>(getSalonResponse, HttpStatus.OK);
+//    }
+
     @GetMapping("{id}")
     public ResponseEntity<GetSalonResponse> getSalon(@PathVariable("id") long id) {
         Optional<Salon> salon = salonService.find(id);
@@ -40,7 +54,7 @@ public class SalonController {
 
     @PostMapping
     public ResponseEntity<Void> createSalon(@RequestBody CreateSalonRequest request, UriComponentsBuilder builder) {
-        Salon salon = (Salon) CreateSalonRequest.dtoToEntityMapper();
+        Salon salon = CreateSalonRequest.dtoToEntityMapper().apply(request);
         salonService.create(salon);
         return ResponseEntity.created(builder.pathSegment( "salon", "{id}").buildAndExpand(salon.getId()).toUri()).build();
     }

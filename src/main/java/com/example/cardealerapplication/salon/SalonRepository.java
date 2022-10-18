@@ -10,8 +10,4 @@ import java.util.Optional;
 
 @Repository
 public interface SalonRepository extends JpaRepository<Salon, Long> {
-
-    Optional<Salon> findById(Long id);
-
-
 }

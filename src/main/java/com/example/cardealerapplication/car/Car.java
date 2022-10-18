@@ -13,7 +13,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
-@EqualsAndHashCode()
 @Entity
 @Table(name = "cars")
 public class Car implements Serializable {
@@ -25,7 +24,7 @@ public class Car implements Serializable {
     private String model;
     private double maxSpeed;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "salon_id",  nullable = false, referencedColumnName = "id")
     private Salon salon;
 }

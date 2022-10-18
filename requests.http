@@ -7,16 +7,26 @@ GET http://localhost:8080/car/5
 
 ###
 
+
+GET http://localhost:8080/salon
+
+###
+
+GET http://localhost:8080/salon/2
+
+###
+
 POST http://localhost:8080/salon
 Content-Type: application/json
 
 {
   "name": "TEST",
-  "adress": "TEST"
+  "address": "TEST"
 }
 
 
 ###
+
 
 POST http://localhost:8080/car
 Content-Type: application/json
@@ -29,68 +39,25 @@ Content-Type: application/json
 }
 
 ###
-#
-#PUT http://localhost:8080/api/characters/5
-#Content-Type: application/json
-#
-#{
-#  "name": "Sir Sigrid",
-#  "background": "Someone well known.",
-#  "age": 30
-#}
-#
+
+PUT http://localhost:8080/car/6
+Content-Type: application/json
+
+{
+  "brand": "Mazda",
+  "model": "123",
+  "maxSpeed": 220,
+  "salonID": 1
+}
+
 ####
-#
-#DELETE http://localhost:8080/api/characters/5
-#
+
+DELETE http://localhost:8080/car/6
+
 ####
-#
-#GET http://localhost:8080/api/characters/1/portrait
-#
+
+DELETE http://localhost:8080/salon/3
+
 ####
-#
-#PUT http://localhost:8080/api/characters/1/portrait
-#Content-Type: multipart/form-data; boundary=boundary
-#
-#--boundary
-#Content-Disposition: form-data; name="portrait"; filename="uhlbrecht.png'
-#
-#< ../../src/main/resources/pl/edu/pg/eti/kask/rpg/configuration/avatar/uhlbrecht.png
-#--boundary--
-#
-####
-#
-#GET http://localhost:8080/api/users/kevin/characters
-#
-####
-#
-#GET http://localhost:8080/api/users/anonymous/characters
-#
-####
-#
-#GET http://localhost:8080/api/users/kevin/characters/1
-#
-####
-#
-#GET http://localhost:8080/api/users/anonymous/characters/1
-#
-####
-#
-#GET http://localhost:8080/api/users/kevin/characters/5
-#
-####
-#
-#POST http://localhost:8080/api/users/kevin/characters
-#Content-Type: application/json
-#
-#{
-#  "name": "Sigrid",
-#  "background": "No one special.",
-#  "age": 18,
-#  "strength": 12,
-#  "constitution": 12,
-#  "charisma": 12,
-#  "profession": "Bard"
-#}
-#
-####
+
+

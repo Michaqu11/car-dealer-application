@@ -12,18 +12,21 @@ import java.util.function.Function;
 
 @Getter
 @Setter
-@SuperBuilder
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @EqualsAndHashCode
 public class CreateSalonRequest {
 
+    private Long id;
     private String name;
     private String address;
 
+
     public static Function<CreateSalonRequest, Salon> dtoToEntityMapper() {
         return request -> Salon.builder()
+                .id(request.getId())
                 .name(request.getName())
                 .address(request.getAddress())
                 .build();

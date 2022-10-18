@@ -5,6 +5,7 @@ import com.example.cardealerapplication.car.dto.CreateCarRequest;
 import com.example.cardealerapplication.car.dto.GetCarResponse;
 import com.example.cardealerapplication.car.dto.GetCarsResponse;
 import com.example.cardealerapplication.car.dto.UpdateCarRequest;
+import com.example.cardealerapplication.salon.Salon;
 import com.example.cardealerapplication.salon.SalonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -41,9 +42,9 @@ public class CarController {
 
     @PostMapping
     public ResponseEntity<Void> createCar(@RequestBody CreateCarRequest request, UriComponentsBuilder builder) {
-        Car car = CreateCarRequest.dtoToEntityMapper(id -> salonService.find(id).orElseThrow()).apply(request);
-        car = carService.create(car);
-        car.setSalon(car.getSalon());
+        Car car = CreateCarRequest.dtoToEntityMapper().apply(request);
+
+        carService.create(car, request.getSalonID());
         return ResponseEntity.created(builder.pathSegment( "car").buildAndExpand(car.getId()).toUri()).build();
     }
 
@@ -58,15 +59,14 @@ public class CarController {
         }
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Void> updateCar(@RequestBody UpdateCarRequest request, @PathVariable("id") long id) {
-        Optional<Car> car = carService.find(id);
-        if (car.isPresent()) {
-            UpdateCarRequest.dtoToEntityUpdater().apply(car.get(), request);
-            carService.update(car.get());
-            return ResponseEntity.accepted().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        Car car = carService.find(id).orElseThrow(
+                () -> new RuntimeException("There is no car with that id!")
+        );
+        car = UpdateCarRequest.dtoToEntityUpdater().apply(car, request);
+
+        carService.update(car);
+        return ResponseEntity.accepted().build();
     }
 }

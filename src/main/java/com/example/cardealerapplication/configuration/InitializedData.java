@@ -47,21 +47,18 @@ public class InitializedData {
                 .brand("Mercedes")
                 .model("C-class")
                 .maxSpeed(245)
-                .salon(topCars)
                 .build();
 
         Car audi = Car.builder()
                 .brand("Audi")
                 .model("A6")
                 .maxSpeed(220)
-                .salon(topCars)
                 .build();
 
         Car scoda = Car.builder()
                 .brand("Scoda")
                 .model("super-b")
                 .maxSpeed(210)
-                .salon(topCars)
                 .build();
 
 
@@ -69,22 +66,20 @@ public class InitializedData {
                 .brand("Mercedes")
                 .model("E-class")
                 .maxSpeed(250)
-                .salon(bellaCars)
                 .build();
 
         Car bmw = Car.builder()
                 .brand("Bmw")
                 .model("M3")
                 .maxSpeed(280)
-                .salon(bellaCars)
                 .build();
 
 
-//        carService.create(mercedes);
-//        carService.create(audi);
-//        carService.create(scoda);
-//        carService.create(mercedes1);
-//        carService.create(bmw);
+        carService.create(mercedes, topCars.getId());
+        carService.create(audi,  topCars.getId());
+        carService.create(scoda, topCars.getId());
+        carService.create(mercedes1, bellaCars.getId());
+        carService.create(bmw, bellaCars.getId());
 
 
 

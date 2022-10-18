@@ -1,10 +1,12 @@
 package com.example.cardealerapplication.salon.dto;
 
 import com.example.cardealerapplication.car.Car;
+import com.example.cardealerapplication.car.dto.GetCarResponse;
 import com.example.cardealerapplication.salon.Salon;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 import java.util.function.Function;
 
 @Getter
@@ -15,18 +17,19 @@ import java.util.function.Function;
 @ToString
 @EqualsAndHashCode
 public class GetSalonResponse {
-
     private Long id;
     private String name;
     private String address;
     private List<String> cars;
+
 
     public static Function<Salon, GetSalonResponse> entityToDtoMapper() {
         return salon -> GetSalonResponse.builder()
                 .id(salon.getId())
                 .name(salon.getName())
                 .address(salon.getAddress())
-                .cars(salon.getCars().stream().map(Car::getBrand).toList())
+                .cars(salon.getCars().stream().map(car -> car.getBrand() + " " + car.getModel()).toList())
                 .build();
     }
+
 }
