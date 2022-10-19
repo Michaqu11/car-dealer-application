@@ -35,19 +35,18 @@ Content-Type: application/json
   "brand": "Volvo",
   "model": "V-90.",
   "maxSpeed": 230,
-  "salonID": 1
+  "salonID": 3
 }
 
 ###
 
-PUT http://localhost:8080/car/6
+PUT http://localhost:8080/car/7
 Content-Type: application/json
 
 {
   "brand": "Mazda",
   "model": "123",
-  "maxSpeed": 220,
-  "salonID": 1
+  "maxSpeed": 220
 }
 
 ####

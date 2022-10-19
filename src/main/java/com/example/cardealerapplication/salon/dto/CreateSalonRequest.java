@@ -1,13 +1,9 @@
 package com.example.cardealerapplication.salon.dto;
 
 
-import com.example.cardealerapplication.car.Car;
-import com.example.cardealerapplication.car.dto.CreateCarRequest;
 import com.example.cardealerapplication.salon.Salon;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
-import java.util.Set;
 import java.util.function.Function;
 
 @Getter

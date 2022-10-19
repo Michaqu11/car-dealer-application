@@ -4,12 +4,10 @@ import com.example.cardealerapplication.car.Car;
 import com.example.cardealerapplication.car.CarService;
 import com.example.cardealerapplication.salon.Salon;
 import com.example.cardealerapplication.salon.SalonService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.time.LocalDate;
 
 @Component
 public class InitializedData {

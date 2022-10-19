@@ -1,7 +1,6 @@
 package com.example.cardealerapplication.car.dto;
 
 import com.example.cardealerapplication.car.Car;
-import com.example.cardealerapplication.salon.Salon;
 import lombok.*;
 
 import java.util.function.BiFunction;

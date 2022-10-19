@@ -1,15 +1,11 @@
 package com.example.cardealerapplication.salon;
 
-import com.example.cardealerapplication.car.Car;
-import com.example.cardealerapplication.car.dto.CreateCarRequest;
-import com.example.cardealerapplication.car.dto.GetCarResponse;
-import com.example.cardealerapplication.car.dto.UpdateCarRequest;
+
 import com.example.cardealerapplication.salon.dto.CreateSalonRequest;
 import com.example.cardealerapplication.salon.dto.GetSalonResponse;
 import com.example.cardealerapplication.salon.dto.GetSalonsResponse;
 import com.example.cardealerapplication.salon.dto.UpdateSalonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -20,7 +16,7 @@ import java.util.Optional;
 @RequestMapping("/salon")
 public class SalonController {
 
-    private SalonService salonService;
+    private final SalonService salonService;
 
     @Autowired
     public SalonController(SalonService salonService){
@@ -31,19 +27,6 @@ public class SalonController {
     public ResponseEntity<GetSalonsResponse> getSalons() {
         return ResponseEntity.ok(GetSalonsResponse.entityToDtoMapper().apply(salonService.findAll()));
     }
-
-//    @GetMapping("{id}")
-//    public ResponseEntity<GetSalonResponse> getSalon(@PathVariable("id") long id) {
-//        Salon salon = salonService.find(id).orElseThrow(
-//                () -> new RuntimeException("There is no salon with that ID")
-//        );
-//        GetSalonResponse getSalonResponse = new GetSalonResponse();
-//        getSalonResponse.setId(salon.getId());
-//        getSalonResponse.setName(salon.getName());
-//        getSalonResponse.setAddress(salon.getAddress());
-//        getSalonResponse.setCars(salon.getCars().stream().map(car -> car.getBrand() + " " + car.getModel()).toList());
-//        return new ResponseEntity<>(getSalonResponse, HttpStatus.OK);
-//    }
 
     @GetMapping("{id}")
     public ResponseEntity<GetSalonResponse> getSalon(@PathVariable("id") long id) {

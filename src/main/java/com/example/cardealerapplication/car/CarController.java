@@ -1,31 +1,25 @@
 package com.example.cardealerapplication.car;
 
-import com.example.cardealerapplication.car.CarService;
 import com.example.cardealerapplication.car.dto.CreateCarRequest;
 import com.example.cardealerapplication.car.dto.GetCarResponse;
 import com.example.cardealerapplication.car.dto.GetCarsResponse;
 import com.example.cardealerapplication.car.dto.UpdateCarRequest;
-import com.example.cardealerapplication.salon.Salon;
-import com.example.cardealerapplication.salon.SalonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/car")
 public class CarController {
 
-    private CarService carService;
-    private SalonService salonService;
+    private final CarService carService;
 
     @Autowired
-    public CarController(CarService carService, SalonService salonService) {
+    public CarController(CarService carService) {
         this.carService = carService;
-        this.salonService = salonService;
     }
 
     @GetMapping
