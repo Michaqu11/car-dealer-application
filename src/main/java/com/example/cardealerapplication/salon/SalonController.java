@@ -43,7 +43,7 @@ public class SalonController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteCar(@PathVariable("id") long id) {
+    public ResponseEntity<Void> deleteSalon(@PathVariable("id") long id) {
         Optional<Salon> salon = salonService.find(id);
         if (salon.isPresent()) {
             salonService.delete(salon.get());
@@ -54,7 +54,7 @@ public class SalonController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Void> updateCar(@RequestBody UpdateSalonRequest request, @PathVariable("id") long id) {
+    public ResponseEntity<Void> updateSalon(@RequestBody UpdateSalonRequest request, @PathVariable("id") long id) {
         Optional<Salon> salon = salonService.find(id);
         if (salon.isPresent()) {
             UpdateSalonRequest.dtoToEntityUpdater().apply(salon.get(), request);
