@@ -38,9 +38,6 @@ public class Storage {
                 });
     }
 
-
-
-
     public synchronized List<Car> findAllCars() {
         return cars.stream().map(CloningUtility::clone).collect(Collectors.toList());
     }

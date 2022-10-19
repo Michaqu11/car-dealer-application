@@ -12,6 +12,4 @@ public class Salon  implements Serializable {
     private Long id;
     private String name;
     private String adress;
-
-
 }
