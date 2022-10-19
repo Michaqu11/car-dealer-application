@@ -1,12 +1,9 @@
 package com.example.cardealerapplication.salon.dto;
 
-import com.example.cardealerapplication.car.Car;
-import com.example.cardealerapplication.car.dto.GetCarResponse;
 import com.example.cardealerapplication.salon.Salon;
 import lombok.*;
 
 import java.util.List;
-import java.util.Set;
 import java.util.function.Function;
 
 @Getter
