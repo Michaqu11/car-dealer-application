@@ -19,11 +19,7 @@ import java.util.Set;
 @Table(name = "salons")
 public class Salon implements Serializable {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY)
-    private Long id;
     private String name;
-    private String address;
 
     @JsonIgnore
     @OneToMany(mappedBy = "salon", cascade = CascadeType.ALL, orphanRemoval = true)

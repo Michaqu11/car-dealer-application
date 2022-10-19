@@ -21,8 +21,8 @@ public class CarService {
     public Optional<Car> find(Long id) {
         return repository.findById(id);
     }
-    public Car create(Car car, Long salonId) {
-        Salon salon = salonService.find(salonId).orElseThrow(
+    public Car create(Car car, String name) {
+        Salon salon = salonService.find(name).orElseThrow(
                 () -> new RuntimeException("There is no salon with that ID")
         );
         car.setSalon(salon);

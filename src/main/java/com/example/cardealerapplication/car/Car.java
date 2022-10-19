@@ -25,6 +25,6 @@ public class Car implements Serializable {
     private double maxSpeed;
 
     @ManyToOne
-    @JoinColumn(name = "salon_id",  nullable = false, referencedColumnName = "id")
+    @JoinColumn(name = "salon_name",  nullable = false, referencedColumnName = "name")
     private Salon salon;
 }

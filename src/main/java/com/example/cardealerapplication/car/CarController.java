@@ -38,7 +38,7 @@ public class CarController {
     public ResponseEntity<Void> createCar(@RequestBody CreateCarRequest request, UriComponentsBuilder builder) {
         Car car = CreateCarRequest.dtoToEntityMapper().apply(request);
 
-        carService.create(car, request.getSalonID());
+        carService.create(car, request.getSalonName());
         return ResponseEntity.created(builder.pathSegment( "car").buildAndExpand(car.getId()).toUri()).build();
     }
 

@@ -28,15 +28,12 @@ public class InitializedData {
     private synchronized void init() {
         Salon topCars = Salon.builder()
                 .name("Top Cars")
-                .address("Grunwaldzka 123 80-321 Gdańsk")
                 .build();
 
 
         Salon bellaCars = Salon.builder()
                 .name("Bella Cars")
-                .address("Świętokrzyska 5 47-231 Nidzica")
                 .build();
-
 
         salonService.create(topCars);
         salonService.create(bellaCars);
@@ -73,11 +70,11 @@ public class InitializedData {
                 .build();
 
 
-        carService.create(mercedes, topCars.getId());
-        carService.create(audi,  topCars.getId());
-        carService.create(scoda, topCars.getId());
-        carService.create(mercedes1, bellaCars.getId());
-        carService.create(bmw, bellaCars.getId());
+        carService.create(mercedes, topCars.getName());
+        carService.create(audi,  topCars.getName());
+        carService.create(scoda, topCars.getName());
+        carService.create(mercedes1, bellaCars.getName());
+        carService.create(bmw, bellaCars.getName());
 
 
 
