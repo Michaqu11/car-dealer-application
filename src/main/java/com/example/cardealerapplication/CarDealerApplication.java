@@ -24,5 +24,5 @@ public class CarDealerApplication {
 //                        .uri("http://localhost:8082"))
 //                .build();
 //    }
-
+//
 }
