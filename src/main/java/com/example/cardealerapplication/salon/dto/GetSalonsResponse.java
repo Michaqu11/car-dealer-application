@@ -29,7 +29,6 @@ public class GetSalonsResponse {
         private Long id;
         private String name;
         private String address;
-        private List<String> cars;
     }
 
     @Singular
@@ -44,7 +43,6 @@ public class GetSalonsResponse {
                             .id(salon.getId())
                             .name(salon.getName())
                             .address(salon.getAddress())
-                            .cars(salon.getCars().stream().map(car -> car.getBrand() + " " + car.getModel()).toList())
                             .build())
                     .forEach(response::salon);
             return response.build();

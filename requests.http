@@ -1,13 +1,3 @@
-GET http://localhost:8080/car
-
-###
-
-
-GET http://localhost:8080/car/5
-
-###
-
-
 GET http://localhost:8080/salon
 
 ###
@@ -27,31 +17,14 @@ Content-Type: application/json
 
 ###
 
-
-POST http://localhost:8080/car
+PUT http://localhost:8080/salon/3
 Content-Type: application/json
 
 {
-  "brand": "Volvo",
-  "model": "V-90.",
-  "maxSpeed": 230,
-  "salonID": 3
+  "name": "TEST",
+  "address": "COMPLETE"
 }
 
-###
-
-PUT http://localhost:8080/car/7
-Content-Type: application/json
-
-{
-  "brand": "Mazda",
-  "model": "123",
-  "maxSpeed": 220
-}
-
-####
-
-DELETE http://localhost:8080/car/6
 
 ####
 
