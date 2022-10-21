@@ -31,8 +31,8 @@ public class InitializedData {
                 .build();
 
 
-        salonService.create(topCars);
-        salonService.create(bellaCars);
+//        salonService.create(topCars);
+//        salonService.create(bellaCars);
     }
 
 }

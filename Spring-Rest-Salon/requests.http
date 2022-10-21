@@ -6,7 +6,7 @@ GET http://localhost:8080/salon/2
 
 ###
 
-POST http://localhost:8080/salon
+POST http://localhost:8082/salon
 Content-Type: application/json
 
 {

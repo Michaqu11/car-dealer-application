@@ -16,13 +16,13 @@ public class CarDealerApplication {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("salons", r -> r.host("localhost:8080")
+                .route("salon", r -> r.host("localhost:8080")
                         .and()
-                        .path("salon/{name}", "/salon")
+                        .path("/salon/{id}", "/salon")
                         .uri("http://localhost:8081"))
                 .route("car", r -> r.host("localhost:8080")
                         .and()
-                        .path("/car", "/car/**", "/salon/{name}/car", "/salon/{name}/car/**")
+                        .path("/car", "/car/**", "/salon/{id}/car", "/salon/{id}/car/**")
                         .uri("http://localhost:8082"))
                 .build();
     }

@@ -6,6 +6,7 @@ import com.example.cardealerapplication.salon.dto.GetSalonResponse;
 import com.example.cardealerapplication.salon.dto.GetSalonsResponse;
 import com.example.cardealerapplication.salon.dto.UpdateSalonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -30,9 +31,8 @@ public class SalonController {
 
     @GetMapping("{id}")
     public ResponseEntity<GetSalonResponse> getSalon(@PathVariable("id") long id) {
-        Optional<Salon> salon = salonService.find(id);
-        return salon.map(value -> ResponseEntity.ok(GetSalonResponse.entityToDtoMapper().apply(value)))
-                .orElseGet(() -> ResponseEntity.notFound().build());
+        Salon salon = salonService.find(id).orElseThrow(() -> new RuntimeException("There is not salon with that name"));
+        return new ResponseEntity(GetSalonResponse.entityToDtoMapper().apply(salon), HttpStatus.OK);
     }
 
     @PostMapping
@@ -47,7 +47,7 @@ public class SalonController {
         Optional<Salon> salon = salonService.find(id);
         if (salon.isPresent()) {
             salonService.delete(salon.get());
-            return ResponseEntity.accepted().build();
+            return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
         }

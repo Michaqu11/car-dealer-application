@@ -70,11 +70,11 @@ public class InitializedData {
                 .build();
 
 
-        carService.create(mercedes, topCars.getName());
-        carService.create(audi,  topCars.getName());
-        carService.create(scoda, topCars.getName());
-        carService.create(mercedes1, bellaCars.getName());
-        carService.create(bmw, bellaCars.getName());
+//        carService.create(mercedes, topCars.getName());
+//        carService.create(audi,  topCars.getName());
+//        carService.create(scoda, topCars.getName());
+//        carService.create(mercedes1, bellaCars.getName());
+//        carService.create(bmw, bellaCars.getName());
 
 
 

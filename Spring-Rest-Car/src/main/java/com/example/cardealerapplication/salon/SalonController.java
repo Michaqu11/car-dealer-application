@@ -32,7 +32,7 @@ public class SalonController {
         Optional<Salon> salon = salonService.find(name);
         if (salon.isPresent()) {
             salonService.delete(salon.get());
-            return ResponseEntity.accepted().build();
+            return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
         }
