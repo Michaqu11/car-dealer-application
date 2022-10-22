@@ -1,10 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page class="background">
   </q-page>
 </template>
 
@@ -15,3 +10,16 @@ export default defineComponent({
   name: 'IndexPage'
 })
 </script>
+<style scoped>
+.background {
+  background-image: url('../assets/dealer3.jpg');
+    /* Full height */
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+</style>
