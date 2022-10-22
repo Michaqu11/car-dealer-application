@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Simple RPG web application"/>
+        <meta name="keywords" content="RPG"/>
+        <meta name="author" content="Michał (psysiu) Wójcik"/>
+        <title>Simple RPG</title>
+        <link rel="stylesheet" href="../styles.css"/>
+        <script src="../script.js" defer="defer"></script>
+        <script type="module" src="user_list.js" defer="defer"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header-layout">
+                <header class="header">
+                    <h1>Salons</h1>
+                </header>
+                <nav class="navigation-bar">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="salons/salons.html">Salons</a></li>
+                        <!-- <li><a href="../about/about.html">Info</a></li> -->
+                    </ul>
+                </nav>
+            </div>   
+
+            <section class="main-section">
+                <article class="text--justified">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>name</th>
+                                <th><a href="#">view</a></th>
+                                <th><a href="#">edit</a></th>
+                                <th><button class="ui-button ui-control">delete</button></th>
+                            </tr>
+                        </thead>
+                        <!-- <tbody id="tableBody">
+                            <tr>
+                                <td>name</td>
+                                <td><a href="#">view</a></td>
+                                <td><a href="#">edit</a></td>
+                                <td>
+                                    <button class="ui-button ui-control">delete</button>
+                                </td>
+                            </tr>
+                        </tbody> -->
+                    </table>
+                </article>
+            </section>
+
+            <footer class="footer">
+                <p>Copyright &copy; 2022, Michał Jasiński</p>
+            </footer>
+        </div>
+    </body>
+</html>

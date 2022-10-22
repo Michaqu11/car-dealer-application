@@ -1,18 +1,25 @@
 body {
-    background-color: #96C4D8;
-    font-family: Georgia serif;
+    background-color: #a1afb4;
+    font-style: Arial;
 }
 
 .container {
     margin: 50px auto;
-    width: 1000px;
+    width: 100%;
 }
 
+.header-layout {
+    background: #81949c;
+    color: #272e30;
+    display: flex;
+    align-items: center;
+}
+
+
 .header {
-    text-align: right;
-    background: #548BA1;
-    color: #214753;
+    text-align: left;
     font-weight: bold;
+    position: relative;
 }
 
 .header h1 {
@@ -22,7 +29,13 @@ body {
 }
 
 .navigation-bar {
-    background-color: #548BA1;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    vertical-align: middle;
 }
 
 .navigation-bar ul {
@@ -40,14 +53,19 @@ body {
     display: inline-block;
     padding: 5px 10px;
     text-decoration: none;
-    color: #214753;
+    color: #272e30;
     font-weight: bold;
+    font-size: large;
 }
-
-.navigation-bar a:hover {
-    background-color: #214753;
-    color: #548BA1;
+.navigation-bar a:hover{
+    transition: ease-in-out 0.4s;
+    color: rgb(231, 237, 237);
+    transform: scale(1.25);
 }
+/* .navigation-bar a:hover {
+    background-color: #272e30;
+    color: #81949c;
+} */
 
 .main-section {
     padding: 10px;
@@ -76,7 +94,7 @@ body {
 }
 
 .ui-control {
-    border-color: #214753;
+    border-color: #272e30;
     background-color: #E0EEF7;
     border-width: 1px;
     padding: 1px;
@@ -116,10 +134,10 @@ body {
 
 .data-table thead {
     font-weight: bold;
-    background-color: #548BA1;
-    color: #214753;
+    background-color: #81949c;
+    color: #272e30;
 }
 
 .data-table tbody tr:hover {
-    background-color: #96C4D8;
+    background-color: #a1afb4;
 }
