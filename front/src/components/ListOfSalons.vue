@@ -16,6 +16,7 @@
           <td class="text-center">
             <UpdateSalon :salonProps="salon" />
             <DeleteSalon :SalonIdProps="salon.id" />
+            <SalonDetails :SalonNameProps="salon.name" />
           </td>
         </tr>
       </tbody>
@@ -24,12 +25,10 @@
 
 <script>
 import { defineComponent, computed, onMounted  } from 'vue'
+import SalonDetails from 'components/SalonDetails.vue'
 import UpdateSalon from 'components/UpdateSalon.vue'
 import DeleteSalon from 'components/DeleteSalon.vue'
-import axios from 'axios'
 import { useStore } from 'src/stores/store.js';
-
-import { getBackendUrl } from '../configuration/conf.js'
 
 import { useRouter } from 'vue-router';
 
@@ -37,13 +36,13 @@ export default defineComponent({
   name: 'ListOfSalons',
   components: {
     UpdateSalon,
-    DeleteSalon
+    DeleteSalon,
+    SalonDetails
   },
   setup(){
 
     const store = useStore();
     const router = useRouter();
-    const url = getBackendUrl + '/salon';
 
     const salons = computed(() => store.getSalons)
 
@@ -51,18 +50,8 @@ export default defineComponent({
       store.setSalons();
     })
 
-    async function deleteSalon(id){
-      console.log(url+`/${id}`)
-      await axios.delete(url+`/${id}`).then(()=>{
-        alert('Delete successful')
-        router.go()
-      })
-        .catch(err=>console.log(err))
-    } 
-
     return {
-      salons,
-      deleteSalon
+      salons
     }
   }
 
