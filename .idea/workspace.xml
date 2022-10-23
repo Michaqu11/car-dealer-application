@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22a9b313-b1dc-4a7a-a343-a42d342d9097" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonResponse.java" afterDir="false" />
+    <list default="true" id="22a9b313-b1dc-4a7a-a343-a42d342d9097" name="Changes" comment="add new endpoint to get all cars belong to salon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/configuration/InitializedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/configuration/InitializedData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Gateway/src/main/java/com/example/cardealerapplication/CarDealerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Gateway/src/main/java/com/example/cardealerapplication/CarDealerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/requests.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/CarDealerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/configuration/InitializedData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/Salon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/CreateSalonRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/UpdateSalonRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/test/java/com/example/cardealerapplication/CarDealerApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +50,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/projekty/java/test/Spring-Rest-Car"
+    "last_opened_file_path": "E:/projekty/java/test/Spring-Rest-Car",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -48,8 +64,16 @@
       <updated>1666543606260</updated>
       <workItem from="1666543607386" duration="20000" />
       <workItem from="1666547409648" duration="42000" />
-      <workItem from="1666547452423" duration="1454000" />
+      <workItem from="1666547452423" duration="3532000" />
     </task>
+    <task id="LOCAL-00001" summary="add new endpoint to get all cars belong to salon">
+      <created>1666555152341</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666555152341</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,5 +101,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add new endpoint to get all cars belong to salon" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new endpoint to get all cars belong to salon" />
   </component>
 </project>

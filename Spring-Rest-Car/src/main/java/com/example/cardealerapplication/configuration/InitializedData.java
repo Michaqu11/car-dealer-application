@@ -27,7 +27,7 @@ public class InitializedData {
     @PostConstruct
     private synchronized void init() {
         Salon topCars = Salon.builder()
-                .name("TopCars")
+                .name("Top Cars")
                 .build();
 
 
