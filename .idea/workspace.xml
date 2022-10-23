@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22a9b313-b1dc-4a7a-a343-a42d342d9097" name="Changes" comment="add new endpoint to get all cars belong to salon">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/configuration/InitializedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/configuration/InitializedData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/requests.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/CarDealerApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/configuration/InitializedData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/Salon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/CreateSalonRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonsResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/UpdateSalonRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/test/java/com/example/cardealerapplication/CarDealerApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="22a9b313-b1dc-4a7a-a343-a42d342d9097" name="Changes" comment="update salon rest" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +42,7 @@
       <updated>1666543606260</updated>
       <workItem from="1666543607386" duration="20000" />
       <workItem from="1666547409648" duration="42000" />
-      <workItem from="1666547452423" duration="3532000" />
+      <workItem from="1666547452423" duration="4090000" />
     </task>
     <task id="LOCAL-00001" summary="add new endpoint to get all cars belong to salon">
       <created>1666555152341</created>
@@ -73,7 +51,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666555152341</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update salon rest">
+      <created>1666559863453</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666559863453</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +89,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add new endpoint to get all cars belong to salon" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new endpoint to get all cars belong to salon" />
+    <MESSAGE value="update salon rest" />
+    <option name="LAST_COMMIT_MESSAGE" value="update salon rest" />
   </component>
 </project>

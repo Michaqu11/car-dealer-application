@@ -47,7 +47,7 @@ public class CarController {
         Optional<Car> car = carService.find(id);
         if (car.isPresent()) {
             carService.delete(car.get());
-            return ResponseEntity.accepted().build();
+            return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
         }
