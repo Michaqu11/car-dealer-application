@@ -28,7 +28,7 @@ public class CarDealerApplication {
                         .uri("http://localhost:8081"))
                 .route("car", r -> r.host("localhost:8080")
                         .and()
-                        .path("/car", "/car/**", "/salon/{name}/car", "/salon/{name}/car/**")
+                        .path("/car", "/car/**", "/salon/cars/{name}","/salon/{name}/car", "/salon/{name}/car/**")
                         .uri("http://localhost:8082"))
                 .build();
     }
