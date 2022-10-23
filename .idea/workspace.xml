@@ -42,7 +42,7 @@
       <updated>1666543606260</updated>
       <workItem from="1666543607386" duration="20000" />
       <workItem from="1666547409648" duration="42000" />
-      <workItem from="1666547452423" duration="4452000" />
+      <workItem from="1666547452423" duration="4978000" />
     </task>
     <task id="LOCAL-00001" summary="add new endpoint to get all cars belong to salon">
       <created>1666555152341</created>
@@ -65,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666560418125</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update car rest">
+      <created>1666560563716</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666560563716</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
