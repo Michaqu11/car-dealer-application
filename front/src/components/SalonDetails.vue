@@ -52,9 +52,7 @@ export default defineComponent({
     })
 
 
-
     function showCars(){
-      console.log('dialog')
       dialog.value = !dialog.value;
 
     }
