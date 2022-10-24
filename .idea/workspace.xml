@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22a9b313-b1dc-4a7a-a343-a42d342d9097" name="Changes" comment="merge stand-alone applications to one project">
-      <change afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/event/UpdateSalonRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/configuration/InitializedData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/event/SalonEventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/event/SalonEventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonService.java" afterDir="false" />
-    </list>
+    <list default="true" id="22a9b313-b1dc-4a7a-a343-a42d342d9097" name="Changes" comment="edit rest methods" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666560563716</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="edit rest methods">
+      <created>1666571264000</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666571264000</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +112,7 @@
     <MESSAGE value="add new endpoint to get all cars belong to salon" />
     <MESSAGE value="update salon rest" />
     <MESSAGE value="update car rest" />
-    <option name="LAST_COMMIT_MESSAGE" value="update car rest" />
+    <MESSAGE value="edit rest methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit rest methods" />
   </component>
 </project>
