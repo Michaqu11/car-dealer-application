@@ -9,6 +9,7 @@
         <q-tabs v-model="tab">
           <q-route-tab name="home" label="Home" to="/" />
           <q-route-tab name="salons" label="Salons"  to="/salons" />
+          <q-route-tab name="cars" label="Cars"  to="/cars" />
         </q-tabs>
       </q-toolbar>
     </q-header>

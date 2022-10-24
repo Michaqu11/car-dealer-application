@@ -3,20 +3,23 @@ import axios from 'axios';
 import { getBackendUrl } from '../configuration/conf.js'
 
 
-const url = getBackendUrl + '/salon';
+const salonUrl = getBackendUrl + '/salon';
+const carUrl = getBackendUrl + '/car';
 
 export const useStore = defineStore('store', {
   state: () => ({
     salons: [],
     carsInSalon: [],
+    cars: []
   }),
   getters: {
     getSalons: (state) => state.salons,
     getCarsInSalon: (state) => state.carsInSalon,
+    getCars: (state) => state.cars
   },
   actions: {
     async setSalons() {
-      axios.get(url, { headers: {
+      axios.get(salonUrl, { headers: {
         'Content-Type': 'application/json; charset=utf-8',
         },
       }).then(res => {
@@ -27,8 +30,7 @@ export const useStore = defineStore('store', {
       })
     },
     async setCarsInSalon(name){
-      console.log(name)
-      axios.get(url + `/cars/${name}`, { headers: {
+      axios.get(salonUrl + `/cars/${name}`, { headers: {
         'Content-Type': 'application/json; charset=utf-8',
         },
       }).then(res => {
@@ -39,5 +41,17 @@ export const useStore = defineStore('store', {
          console.log(err)
       })
     }
+  },
+  async setCars() {
+    axios.get(carUrl, { headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      },
+    }).then(res => {
+      console.log('test')
+      this.cars = res.data.cars
+    })
+    .catch(err =>{
+       console.log(err)
+    })
   },
 });
