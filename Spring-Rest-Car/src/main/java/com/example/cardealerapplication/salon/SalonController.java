@@ -2,6 +2,8 @@ package com.example.cardealerapplication.salon;
 
 
 import com.example.cardealerapplication.salon.dto.CreateSalonRequest;
+import com.example.cardealerapplication.salon.dto.GetSalonResponse;
+import com.example.cardealerapplication.salon.dto.GetSalonsResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,10 +34,24 @@ public class SalonController {
         Optional<Salon> salon = salonService.find(name);
         if (salon.isPresent()) {
             salonService.delete(salon.get());
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.accepted().build();
         } else {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("salons")
+    public ResponseEntity<GetSalonsResponse> getSalons() {
+        return ResponseEntity.ok(GetSalonsResponse.entityToDtoMapper().apply(salonService.findAll()));
+    }
+
+    @GetMapping("cars/{id}")
+    public ResponseEntity<GetSalonResponse> getSalonWtihCars(@PathVariable("id") String name) {
+        Optional<Salon> salon = salonService.find(name);
+        return salon.map(value -> ResponseEntity.ok(GetSalonResponse.entityToDtoMapper().apply(value)))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+
 
 }

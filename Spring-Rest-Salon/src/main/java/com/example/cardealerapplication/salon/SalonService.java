@@ -39,5 +39,7 @@ public class SalonService {
 
     public void update(Salon salon) {
         repository.save(salon);
+        eventRepository.delete(salon);
+        eventRepository.create(salon);
     }
 }
