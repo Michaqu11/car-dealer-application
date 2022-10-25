@@ -25,6 +25,7 @@ public class SalonController {
     @PostMapping
     public ResponseEntity<Void> createSalon(@RequestBody CreateSalonRequest request, UriComponentsBuilder builder) {
         Salon salon = CreateSalonRequest.dtoToEntityMapper().apply(request);
+        salon.setNewName(salon.getName());
         salonService.create(salon);
         return ResponseEntity.created(builder.pathSegment( "salon", "{id}").buildAndExpand(salon.getName()).toUri()).build();
     }
@@ -50,6 +51,17 @@ public class SalonController {
         Optional<Salon> salon = salonService.find(name);
         return salon.map(value -> ResponseEntity.ok(GetSalonResponse.entityToDtoMapper().apply(value)))
                 .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PostMapping("/update/{name}")
+    public ResponseEntity<Void> updateSalon(@RequestBody String newName, @PathVariable("name") String name) {
+        Optional<Salon> salon = salonService.find(name);
+        if (salon.isPresent()) {
+            salonService.update(salon.get(), newName);
+            return ResponseEntity.accepted().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 

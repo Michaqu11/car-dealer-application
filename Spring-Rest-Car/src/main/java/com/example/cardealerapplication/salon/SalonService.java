@@ -28,4 +28,8 @@ public class SalonService {
         repository.delete(salon);
     }
 
+    public void update(Salon salon, String newName) {
+        salon.setNewName(newName);
+        repository.save(salon);
+    }
 }

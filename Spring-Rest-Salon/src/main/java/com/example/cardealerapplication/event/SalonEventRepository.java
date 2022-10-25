@@ -27,7 +27,7 @@ public class SalonEventRepository {
     }
 
     public void update(String name, String newName) {
-        restTemplate.postForLocation("/update/salon/" + name, newName);
+        restTemplate.postForLocation("/salon/update/" + name, newName);
     }
 
 }
