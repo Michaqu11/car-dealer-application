@@ -4,7 +4,6 @@ package com.example.cardealerapplication.salon;
 import com.example.cardealerapplication.salon.dto.CreateSalonRequest;
 import com.example.cardealerapplication.salon.dto.GetSalonResponse;
 import com.example.cardealerapplication.salon.dto.GetSalonsResponse;
-import com.example.cardealerapplication.salon.dto.UpdateSalonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

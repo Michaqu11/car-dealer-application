@@ -38,7 +38,7 @@ public class SalonService {
     }
 
     public void update(Salon salon, String newName, String newAddress) {
-        eventRepository.update(salon.getName(), newName);
+        eventRepository.update(salon.getSaveName(), newName);
         salon.setName(newName);
         salon.setAddress(newAddress);
         repository.save(salon);

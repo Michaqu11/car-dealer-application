@@ -25,9 +25,7 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:8080/salon/1?newName=TEST2&newAddress=TEST
-
-
+PUT http://localhost:8080/salon/1?newName=TEST4&newAddress=TEST
 
 
 ###
