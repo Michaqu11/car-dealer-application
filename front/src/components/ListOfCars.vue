@@ -17,7 +17,9 @@
           <td class="text-center">{{car.model}}</td>
           <td class="text-center">{{car.maxSpeed}}</td>
           <td class="text-center">{{car.salonName}}</td>
-          <td class="text-center"></td>
+          <td class="text-center">
+            <UpdateCarVue :carProps="car" />
+          </td>
         </tr>
       </tbody>
     </q-markup-table>
@@ -26,10 +28,14 @@
 <script>
 import { defineComponent, computed, onMounted  } from 'vue'
 import { useStore } from 'src/stores/store.js';
+import UpdateCarVue from './UpdateCar.vue';
 // import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'ListOfCars',
+  components:{
+    UpdateCarVue
+  },
   setup(){
 
     const store = useStore();
