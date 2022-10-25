@@ -19,7 +19,7 @@ public class SalonEventRepository {
     }
 
     public void delete(Salon salon) {
-        restTemplate.delete("/salon/{name}", salon.getName());
+        restTemplate.delete("/salon/{name}", salon.getSaveName());
     }
 
     public void create(Salon salon) {
