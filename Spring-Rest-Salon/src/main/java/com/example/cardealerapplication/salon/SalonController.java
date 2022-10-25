@@ -30,7 +30,7 @@ public class SalonController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<GetSalonResponse> getSalon(@PathVariable("id") long id) {
+    public ResponseEntity<GetSalonResponse> getSalon(@PathVariable("id") Long id) {
         Salon salon = salonService.find(id).orElseThrow(() -> new RuntimeException("There is not salon with that name"));
         return new ResponseEntity(GetSalonResponse.entityToDtoMapper().apply(salon), HttpStatus.OK);
     }
@@ -43,7 +43,7 @@ public class SalonController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteSalon(@PathVariable("id") long id) {
+    public ResponseEntity<Void> deleteSalon(@PathVariable("id") Long id) {
         Optional<Salon> salon = salonService.find(id);
         if (salon.isPresent()) {
             salonService.delete(salon.get());
@@ -54,11 +54,12 @@ public class SalonController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Void> updateSalon(@RequestBody UpdateSalonRequest request, @PathVariable("id") long id) {
+    public ResponseEntity<Void> updateSalon(@RequestParam String newName, @RequestParam String newAddress, @PathVariable("id") Long id) {
         Optional<Salon> salon = salonService.find(id);
         if (salon.isPresent()) {
-            UpdateSalonRequest.dtoToEntityUpdater().apply(salon.get(), request);
-            salonService.update(salon.get());
+            salonService.update(salon.get(), newName, newAddress);
+//            UpdateSalonRequest.dtoToEntityUpdater().apply(salon.get(), request);
+
             return ResponseEntity.accepted().build();
         } else {
             return ResponseEntity.notFound().build();

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22a9b313-b1dc-4a7a-a343-a42d342d9097" name="Changes" comment="edit rest methods" />
+    <list default="true" id="60510f90-132d-4f9b-b67c-5340ea3e3a8f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/event/SalonEventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/event/SalonEventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/event/UpdateSalonRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/event/UpdateSalonRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/SalonService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/projekty/java/test2/car-dealer-application/Spring-Rest-Gateway",
+    "last_opened_file_path": "E:/projekty/java/test/Spring-Rest-Car",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>

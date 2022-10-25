@@ -16,8 +16,8 @@ import java.util.function.Function;
 @ToString
 @EqualsAndHashCode
 public class UpdateSalonRequest {
-    private String oldName;
     private String name;
+    private String newName;
     private String address;
 
     public static BiFunction<Salon, UpdateSalonRequest, Salon> entityToDtoMapper() {

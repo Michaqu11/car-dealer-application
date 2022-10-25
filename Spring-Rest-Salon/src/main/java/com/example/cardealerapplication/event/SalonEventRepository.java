@@ -26,8 +26,8 @@ public class SalonEventRepository {
         restTemplate.postForLocation("/salon", CreateSalonRequest.entityToDtoMapper().apply(salon));
     }
 
-//    public void update(Salon salon) {
-//        restTemplate.postForLocation("/salon", UpdateSalonRequest.entityToDtoMapper().apply(salon));
-//    }
+    public void update(String name, String newName) {
+        restTemplate.postForLocation("/update/salon/" + name, newName);
+    }
 
 }
