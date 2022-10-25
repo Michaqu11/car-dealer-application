@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60510f90-132d-4f9b-b67c-5340ea3e3a8f" name="Changes" comment="create update method in category site">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/Salon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/Salon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Car/src/main/java/com/example/cardealerapplication/salon/SalonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Gateway/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Gateway/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Gateway/requests.http" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Gateway/requests.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/event/SalonEventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/event/SalonEventRepository.java" afterDir="false" />
+    <list default="true" id="60510f90-132d-4f9b-b67c-5340ea3e3a8f" name="Changes" comment="create update method on element site">
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/Salon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/Salon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/CreateSalonRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/CreateSalonRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Spring-Rest-Salon/src/main/java/com/example/cardealerapplication/salon/dto/GetSalonsResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666719584196</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="create update method on element site">
+      <created>1666723298795</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666723298795</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +133,7 @@
     <MESSAGE value="update car rest" />
     <MESSAGE value="edit rest methods" />
     <MESSAGE value="create update method in category site" />
-    <option name="LAST_COMMIT_MESSAGE" value="create update method in category site" />
+    <MESSAGE value="create update method on element site" />
+    <option name="LAST_COMMIT_MESSAGE" value="create update method on element site" />
   </component>
 </project>

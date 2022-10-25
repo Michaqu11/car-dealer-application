@@ -28,6 +28,7 @@ public class GetSalonsResponse {
 
         private Long id;
         private String name;
+        private String saveName;
         private String address;
     }
 
@@ -42,6 +43,7 @@ public class GetSalonsResponse {
                     .map(salon -> Salon.builder()
                             .id(salon.getId())
                             .name(salon.getName())
+                            .saveName(salon.getSaveName())
                             .address(salon.getAddress())
                             .build())
                     .forEach(response::salon);
