@@ -32,6 +32,10 @@ public class SalonService {
         return repository.save(salon);
     }
 
+    public Salon createLocal(Salon salon) {
+        return repository.save(salon);
+    }
+
     public void delete(Salon salon) {
         repository.deleteById(salon.getId());
         eventRepository.delete(salon);

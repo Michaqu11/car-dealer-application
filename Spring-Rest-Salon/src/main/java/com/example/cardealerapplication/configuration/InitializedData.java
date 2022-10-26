@@ -21,18 +21,22 @@ public class InitializedData {
     private synchronized void init() {
         Salon topCars = Salon.builder()
                 .name("Top Cars")
+                .saveName("Top Cars")
                 .address("Grunwaldzka 123 80-321 Gdańsk")
                 .build();
 
 
         Salon bellaCars = Salon.builder()
                 .name("Bella Cars")
+                .saveName("Bella Cars")
                 .address("Świętokrzyska 5 47-231 Nidzica")
                 .build();
 
 
-//        salonService.create(topCars);
-//        salonService.create(bellaCars);
+        salonService.createLocal(topCars);
+        salonService.createLocal(bellaCars);
+
+
     }
 
 }
