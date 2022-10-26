@@ -46,10 +46,15 @@ export const useStore = defineStore('store', {
         },
       }).then(res => {
         this.carsInSalon = res.data.cars
+        return this.carsInSalon
       })
       .catch(err =>{
          console.log(err)
+         return []
       })
+    },
+    clearCarsInSalon(){
+      this.carsInSalon = []
     }
   },
 });

@@ -78,7 +78,13 @@ export default defineComponent({
           })
           router.go()
         })
-        .catch(err=>console.log(err))
+        .catch(err=>{
+          console.log(err)
+          $q.notify({
+          message: 'There was a problem! Please correct the details and try again.',
+          color: 'red'
+          })
+        })
     }
 
     return {

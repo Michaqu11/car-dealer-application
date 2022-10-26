@@ -1,5 +1,5 @@
 <template>
- <q-btn @click="deleteSalon()" flat round icon="delete"/>
+ <q-btn @click="deleteCarModel()" flat round icon="delete"/>
 </template>
 
 <script>
@@ -13,19 +13,19 @@ import { useRouter } from 'vue-router';
 export default defineComponent({
   name: 'DeleteSalon',
   props: {
-    SalonIdProps: Number,
+    CarIdProps: Number,
   },
   setup(props){
 
     const router = useRouter();
-    const url = getBackendUrl + '/salon';
-    const salonId = ref(props.SalonIdProps)
+    const url = getBackendUrl + '/car';
+    const carId = ref(props.CarIdProps)
     const $q = useQuasar()
 
 
 
-    async function deleteSalon(){
-      await axios.delete(url+`/${salonId.value}`, { headers: {
+    async function deleteCarModel(){
+      await axios.delete(url+`/${carId.value}`, { headers: {
         'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': '*'
         }}).then(()=> {
@@ -47,7 +47,7 @@ export default defineComponent({
    
 
     return {
-      deleteSalon,
+      deleteCarModel,
     }
   }
 

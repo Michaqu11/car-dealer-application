@@ -34,7 +34,7 @@
             v-model="maxSpeed"
             label="Max speed"
             lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Please type something']"
+            :rules="[ val => val && val != null || 'Please type something']"
           />
 
           <div class="text-center">
@@ -66,13 +66,13 @@ export default defineComponent({
     const router = useRouter();
     const car = ref(props.carProps);
     if(car.value == undefined){
-      router.push({path:'/salon'})
+      router.push({path:'/car'})
     }
-    const url = getBackendUrl + `/salon/${car.value.id}`;
+    const url = getBackendUrl + `/car/${car.value.id}`;
     const dialog = ref(false)
     const brand = ref(car.value.brand)
     const model = ref(car.value.model)
-    const maxSpeed = ref(car.value.maxSpeed)
+    const maxSpeed = ref(parseInt(car.value.maxSpeed))
     const salonName = ref(car.value.salonName)
     const $q = useQuasar()
 
@@ -100,7 +100,12 @@ export default defineComponent({
          
           router.go()
         })
-        .catch(err=>console.log(err))
+        .catch(err=>{
+          console.log(err)
+          $q.notify({
+          message: 'There was a problem! Please correct the details and try again.',
+          color: 'red'
+          })})
     }
 
     return {
