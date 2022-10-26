@@ -10,14 +10,25 @@ export const useStore = defineStore('store', {
   state: () => ({
     salons: [],
     carsInSalon: [],
-    cars: []
+    carsData: []
   }),
   getters: {
     getSalons: (state) => state.salons,
     getCarsInSalon: (state) => state.carsInSalon,
-    getCars: (state) => state.cars
+    getCarsData: (state) => state.carsData
   },
   actions: {
+    async setCarsData() {
+      axios.get(carUrl, { headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        },
+      }).then(res => {
+        this.carsData = res.data.cars
+      })
+      .catch(err =>{
+         console.log(err)
+      })
+    },
     async setSalons() {
       axios.get(salonUrl, { headers: {
         'Content-Type': 'application/json; charset=utf-8',
@@ -34,24 +45,11 @@ export const useStore = defineStore('store', {
         'Content-Type': 'application/json; charset=utf-8',
         },
       }).then(res => {
-        console.log(res.data.cars)
         this.carsInSalon = res.data.cars
       })
       .catch(err =>{
          console.log(err)
       })
     }
-  },
-  async setCars() {
-    axios.get(carUrl, { headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-      },
-    }).then(res => {
-      console.log('test')
-      this.cars = res.data.cars
-    })
-    .catch(err =>{
-       console.log(err)
-    })
   },
 });

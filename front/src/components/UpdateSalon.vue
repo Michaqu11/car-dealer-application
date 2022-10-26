@@ -70,11 +70,9 @@ export default defineComponent({
 
 
     async function onSubmit(){
-      const data = {
-        name: name.value,
-        address: address.value
-      }
-      await axios.put(url, data, { headers: {
+      const fullUrl = url + `?newName=${name.value}&newAddress=${address.value}`
+
+      await axios.put(fullUrl, { headers: {
         'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': '*'
         }}).then(()=> {

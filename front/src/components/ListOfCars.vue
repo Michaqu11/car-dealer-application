@@ -16,7 +16,7 @@
           <td class="text-center">{{car.brand}}</td>
           <td class="text-center">{{car.model}}</td>
           <td class="text-center">{{car.maxSpeed}}</td>
-          <td class="text-center">{{car.salonName}}</td>
+          <td class="text-center">{{car.salon}}</td>
           <td class="text-center">
             <UpdateCarVue :carProps="car" />
           </td>
@@ -42,11 +42,11 @@ export default defineComponent({
     // const router = useRouter();
     
 
-    const cars = computed(() => store.getCars)
+    const cars = computed(() => store.getCarsData)
 
-    onMounted(async () => {
-      await store.setCars;
-    })
+    onMounted(async () => 
+      await store.setCarsData()
+    )
 
     return {
       cars

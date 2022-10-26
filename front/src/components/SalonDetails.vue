@@ -10,11 +10,14 @@
       </q-card-section>
 
       <q-card-section>
-        <q-list dense bordered padding class="rounded-borders" separator>
+        <q-list v-if="cars.length" dense bordered padding class="rounded-borders" separator>
           <q-item  v-for="car of cars" v-bind:key="car">
             <q-item-section>{{car}}</q-item-section>
           </q-item>
         </q-list>
+        <div v-else>
+          <span class="text-h7 ">Salon doesn't have any cars</span>
+        </div>
       </q-card-section>
     </q-card>
   </q-dialog>
@@ -32,7 +35,8 @@ import { useRouter } from 'vue-router';
 export default defineComponent({
   name: 'SalonDetails',
   props: {
-    SalonNameProps: Object,
+    SalonNameProps: String,
+    SalonSaveNameProps: String,
   },
   setup(props){
 
@@ -40,6 +44,7 @@ export default defineComponent({
     const store = useStore();
     const url = getBackendUrl + '/salon';
     const salonName = ref(props.SalonNameProps)
+    const saveName =  ref(props.SalonSaveNameProps)
     const $q = useQuasar()
 
     const dialog = ref(false);
@@ -48,7 +53,7 @@ export default defineComponent({
 
 
     onMounted(async () => {
-      await store.setCarsInSalon(salonName.value);
+      await store.setCarsInSalon(saveName.value);
     })
 
 
@@ -62,6 +67,7 @@ export default defineComponent({
     return {
       showCars,
       salonName,
+      saveName,
       cars,
       dialog
     }

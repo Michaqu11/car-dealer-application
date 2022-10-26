@@ -64,14 +64,16 @@ export default defineComponent({
   setup(props){
 
     const router = useRouter();
-    if(props.carProps == undefined){
+    const car = ref(props.carProps);
+    if(car.value == undefined){
       router.push({path:'/salon'})
     }
-    const url = getBackendUrl + `/salon/${props.carProps.id}`;
+    const url = getBackendUrl + `/salon/${car.value.id}`;
     const dialog = ref(false)
-    const brand = ref('')
-    const model = ref('')
-    const maxSpeed = ref(null)
+    const brand = ref(car.value.brand)
+    const model = ref(car.value.model)
+    const maxSpeed = ref(car.value.maxSpeed)
+    const salonName = ref(car.value.salonName)
     const $q = useQuasar()
 
 
@@ -105,8 +107,9 @@ export default defineComponent({
       showDialog,
       onSubmit,
       dialog,
-      name,
-      address
+      brand,
+      model,
+      maxSpeed,
     }
   }
 
