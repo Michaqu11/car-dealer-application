@@ -17,7 +17,8 @@
             <UpdateSalon :salonProps="salon" />
             <DeleteSalon :SalonIdProps="salon.id" />
             <AddCar :salonNameProps="salon.saveName"/>
-            <SalonDetails :SalonNameProps="salon.name" :SalonSaveNameProps="salon.saveName"/>
+            <q-btn @click="showDetails(salon.id)" flat round icon="more_vert"/>
+            <SalonDetails v-if="details==salon.id" :SalonNameProps="salon.name" :SalonSaveNameProps="salon.saveName"  @close="clearDetails"/>
           </td>
         </tr>
       </tbody>
@@ -25,7 +26,7 @@
 </template>
 
 <script>
-import { defineComponent, computed, onMounted  } from 'vue'
+import { defineComponent, computed, onMounted,ref  } from 'vue'
 import SalonDetails from 'components/SalonDetails.vue'
 import UpdateSalon from 'components/UpdateSalon.vue'
 import DeleteSalon from 'components/DeleteSalon.vue'
@@ -46,6 +47,7 @@ export default defineComponent({
 
     const store = useStore();
     const router = useRouter();
+    const details = ref(0);
 
     const salons = computed(() => store.getSalons)
 
@@ -53,8 +55,19 @@ export default defineComponent({
       store.setSalons();
     })
 
+    function showDetails(id){
+      details.value = id;
+    }
+
+    function clearDetails(){
+      details.value = 0;
+    }
+
     return {
-      salons
+      salons,
+      details,
+      showDetails,
+      clearDetails
     }
   }
 

@@ -19,6 +19,7 @@
           <td class="text-center">{{car.salon}}</td>
           <td class="text-center">
             <UpdateCarVue :carProps="car" />
+            <DeleteCarVue :CarIdProps="car.id" />
           </td>
         </tr>
       </tbody>
@@ -29,18 +30,18 @@
 import { defineComponent, computed, onMounted  } from 'vue'
 import { useStore } from 'src/stores/store.js';
 import UpdateCarVue from './UpdateCar.vue';
-// import { useRouter } from 'vue-router';
+import DeleteCarVue from './DeleteCar.vue';
+
 
 export default defineComponent({
   name: 'ListOfCars',
   components:{
-    UpdateCarVue
+    UpdateCarVue,
+    DeleteCarVue
   },
   setup(){
 
     const store = useStore();
-    // const router = useRouter();
-    
 
     const cars = computed(() => store.getCarsData)
 

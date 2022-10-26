@@ -1,12 +1,10 @@
 <template>
- <q-btn @click="showCars()" flat round icon="more_vert"/>
-
  <q-dialog v-model="dialog">
     <q-card  style="width: 700px; max-width: 80vw;">
       <q-card-section class="row items-center q-pb-none">
         <div class="text-h6">Cars belonging to {{salonName}} salon</div>
         <q-space />
-        <q-btn icon="close" flat round dense v-close-popup />
+        <q-btn icon="close" flat round dense v-close-popup @click="$emit('close', true)"/>
       </q-card-section>
 
       <q-card-section>
@@ -38,6 +36,7 @@ export default defineComponent({
     SalonNameProps: String,
     SalonSaveNameProps: String,
   },
+  emits: ['close'],
   setup(props){
 
     const router = useRouter();
@@ -47,25 +46,16 @@ export default defineComponent({
     const saveName =  ref(props.SalonSaveNameProps)
     const $q = useQuasar()
 
-    const dialog = ref(false);
+    const dialog = ref(true);
     
-    const cars = computed(()=>store.getCarsInSalon)
-
+    const cars = computed(() => store.getCarsInSalon)
 
     onMounted(async () => {
       await store.setCarsInSalon(saveName.value);
     })
-
-
-    function showCars(){
-      dialog.value = !dialog.value;
-
-    }
-
    
 
     return {
-      showCars,
       salonName,
       saveName,
       cars,
