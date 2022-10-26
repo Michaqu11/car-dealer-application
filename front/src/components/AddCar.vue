@@ -1,5 +1,5 @@
 <template>
- <q-btn class="q-ma-sm" @click="showDialog()" flat round icon="add"/>
+ <q-btn class="q-ma-sm" @click="showDialog()" flat round :icon="addToSalon ? 'add' : 'toys'"/>
 
  <q-dialog v-model="dialog">
     <q-card  style="width: 700px; max-width: 80vw;">
@@ -38,7 +38,7 @@
           />
 
           <q-input
-            v-show="showSalon"
+            v-show="addToSalon"
             filled
             v-model="salonName"
             label="Salon name"
@@ -84,7 +84,7 @@ export default defineComponent({
     const model = ref('')
     const maxSpeed = ref(null)
     const salonName = ref(props.salonNameProps)
-    const showSalon = ref(props.salonNameProps ? false : true)
+    const addToSalon = ref(props.salonNameProps ? false : true)
     const $q = useQuasar()
 
 
@@ -121,7 +121,7 @@ export default defineComponent({
       model,
       maxSpeed,
       salonName,
-      showSalon
+      addToSalon
     }
   }
 

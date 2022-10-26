@@ -1,5 +1,14 @@
 <template>
   <q-page class="background">
+    <div class="q-mt-xl q-pa-md row items-start fixed fixed-center q-gutter-md">
+      <q-card @click="$router.push('/salons')" class="my-card">
+        <div class="text-h3 text-center text-size q-pa-xl">Salons</div>
+      </q-card>
+      <q-card @click="$router.push('/cars')" class="my-card">
+        <div class="text-h3 text-center q-pa-xl">Cars</div>
+      </q-card>
+    </div>
+
   </q-page>
 </template>
 
@@ -20,6 +29,11 @@ export default defineComponent({
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.my-card {
+  width: 100%;
+  /* max-width: 350px; */
 }
 
 </style>

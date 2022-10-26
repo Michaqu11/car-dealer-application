@@ -16,7 +16,8 @@
           <td class="text-center">
             <UpdateSalon :salonProps="salon" />
             <DeleteSalon :SalonIdProps="salon.id" />
-            <SalonDetails :SalonNameProps="salon.name" />
+            <AddCar :salonNameProps="salon.saveName"/>
+            <SalonDetails :SalonNameProps="salon.name" :SalonSaveNameProps="salon.saveName"/>
           </td>
         </tr>
       </tbody>
@@ -31,14 +32,16 @@ import DeleteSalon from 'components/DeleteSalon.vue'
 import { useStore } from 'src/stores/store.js';
 
 import { useRouter } from 'vue-router';
+import AddCar from './AddCar.vue';
 
 export default defineComponent({
   name: 'ListOfSalons',
   components: {
     UpdateSalon,
     DeleteSalon,
-    SalonDetails
-  },
+    SalonDetails,
+    AddCar,
+},
   setup(){
 
     const store = useStore();
