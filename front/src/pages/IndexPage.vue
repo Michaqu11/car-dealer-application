@@ -22,10 +22,8 @@ export default defineComponent({
 <style scoped>
 .background {
   background-image: url('../assets/dealer3.jpg');
-    /* Full height */
-    height: 100%;
 
-  /* Center and scale the image nicely */
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
