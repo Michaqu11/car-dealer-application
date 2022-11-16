@@ -18,7 +18,7 @@ public class CarController {
     private final CarService carService;
 
     @Autowired
-    public CarController(CarService carService) {
+    public CarController(CarService carService){
         this.carService = carService;
     }
 
@@ -37,7 +37,6 @@ public class CarController {
     @PostMapping
     public ResponseEntity<Void> createCar(@RequestBody CreateCarRequest request, UriComponentsBuilder builder) {
         Car car = CreateCarRequest.dtoToEntityMapper().apply(request);
-
         carService.create(car, request.getSalonName());
         return ResponseEntity.created(builder.pathSegment( "car").buildAndExpand(car.getId()).toUri()).build();
     }
@@ -47,7 +46,7 @@ public class CarController {
         Optional<Car> car = carService.find(id);
         if (car.isPresent()) {
             carService.delete(car.get());
-            return ResponseEntity.accepted().build();
+            return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
         }

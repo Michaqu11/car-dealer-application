@@ -17,6 +17,7 @@ public class CreateSalonRequest {
 
     private Long id;
     private String name;
+    private String saveName;
     private String address;
 
 
@@ -24,6 +25,7 @@ public class CreateSalonRequest {
         return request -> Salon.builder()
                 .id(request.getId())
                 .name(request.getName())
+                .saveName(request.getName())
                 .address(request.getAddress())
                 .build();
     }

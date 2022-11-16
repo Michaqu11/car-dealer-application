@@ -1,5 +1,6 @@
 package com.example.cardealerapplication.configuration;
 
+
 import com.example.cardealerapplication.car.Car;
 import com.example.cardealerapplication.car.CarService;
 import com.example.cardealerapplication.salon.Salon;
@@ -12,31 +13,32 @@ import javax.annotation.PostConstruct;
 @Component
 public class InitializedData {
 
-
     private final CarService carService;
     private final SalonService salonService;
-
     @Autowired
     public InitializedData(CarService carService, SalonService salonService) {
         this.carService = carService;
         this.salonService = salonService;
     }
 
-
-
     @PostConstruct
     private synchronized void init() {
+
         Salon topCars = Salon.builder()
                 .name("Top Cars")
+                .newName("Top Cars")
                 .build();
 
 
         Salon bellaCars = Salon.builder()
                 .name("Bella Cars")
+                .newName("Bella Cars")
                 .build();
+
 
         salonService.create(topCars);
         salonService.create(bellaCars);
+
 
         Car mercedes = Car.builder()
                 .brand("Mercedes")
@@ -71,16 +73,9 @@ public class InitializedData {
 
 
         carService.create(mercedes, topCars.getName());
-        carService.create(audi,  topCars.getName());
+        carService.create(audi, topCars.getName());
         carService.create(scoda, topCars.getName());
         carService.create(mercedes1, bellaCars.getName());
         carService.create(bmw, bellaCars.getName());
-
-
-
-
-
-
     }
-
 }

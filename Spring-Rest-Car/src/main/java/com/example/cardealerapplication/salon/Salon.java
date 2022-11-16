@@ -20,6 +20,8 @@ import java.util.Set;
 public class Salon implements Serializable {
     @Id
     private String name;
+    @Column(name = "new_name")
+    private String newName;
 
     @JsonIgnore
     @OneToMany(mappedBy = "salon", cascade = CascadeType.ALL, orphanRemoval = true)

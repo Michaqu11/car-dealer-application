@@ -19,5 +19,7 @@ public class Salon implements Serializable {
             strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(unique=true)
+    private String saveName;
     private String address;
 }

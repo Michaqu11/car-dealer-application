@@ -44,7 +44,7 @@ public class GetCarsResponse {
                             .brand(car.getBrand())
                             .model(car.getModel())
                             .maxSpeed(car.getMaxSpeed())
-                            .salon(car.getSalon().getName())
+                            .salon(car.getSalon().getNewName())
                             .build())
                     .forEach(response::car);
             return response.build();

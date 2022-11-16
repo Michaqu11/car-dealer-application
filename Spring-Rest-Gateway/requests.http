@@ -23,6 +23,9 @@ Content-Type: application/json
   "name": "TEST",
   "address": "TEST"
 }
+###
+
+PUT http://localhost:8080/salon/1?newName=TEST4&newAddress=TEST
 
 
 ###
@@ -35,7 +38,7 @@ Content-Type: application/json
   "brand": "Volvo",
   "model": "V-90.",
   "maxSpeed": 230,
-  "salonID": 3
+  "salonName": "TEST"
 }
 
 ###
