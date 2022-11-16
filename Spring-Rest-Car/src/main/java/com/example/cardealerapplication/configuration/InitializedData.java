@@ -77,18 +77,5 @@ public class InitializedData {
         carService.create(scoda, topCars.getName());
         carService.create(mercedes1, bellaCars.getName());
         carService.create(bmw, bellaCars.getName());
-
-
-
-//        while(true) {
-//            System.out.println(salonService.findAll());
-//            if (salonService.find("Top Cars").isPresent() && salonService.find("Bella Cars").isPresent()) {
-//                carService.create(mercedes, "Top Cars");
-//                carService.create(audi, "Top Cars");
-//                carService.create(scoda, "Top Cars");
-//                carService.create(mercedes1, "Bella Cars");
-//                carService.create(bmw, "Bella Cars");
-//            }
-//        }
     }
 }

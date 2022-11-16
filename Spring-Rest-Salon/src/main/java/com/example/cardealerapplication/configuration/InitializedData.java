@@ -36,7 +36,6 @@ public class InitializedData {
         salonService.createLocal(topCars);
         salonService.createLocal(bellaCars);
 
-
     }
 
 }

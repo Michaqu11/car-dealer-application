@@ -57,7 +57,6 @@ public class SalonController {
         Optional<Salon> salon = salonService.find(id);
         if (salon.isPresent()) {
             salonService.update(salon.get(), newName, newAddress);
-//            UpdateSalonRequest.dtoToEntityUpdater().apply(salon.get(), request);
 
             return ResponseEntity.accepted().build();
         } else {

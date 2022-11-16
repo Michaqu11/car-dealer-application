@@ -19,7 +19,6 @@ public class CarController {
 
     @Autowired
     public CarController(CarService carService){
-        System.out.println("TEST");
         this.carService = carService;
     }
 
