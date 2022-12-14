@@ -1,0 +1,10 @@
+services:
+  m1:
+    build: ./m1
+    ports:
+      - 80:80
+  m2:
+    build: ./m2
+    container_name: m2
+    expose: 
+      - '8080'
