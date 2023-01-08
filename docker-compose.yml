@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  app:
+    build: ./car-dealer-application
+    container_name: app
+    ports:
+      - 8080:8080
+    volumes:
+      - ./car-dealer-database/files/:/app/uploaded_files
+  mysqldb:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - ./car-dealer-database/mysql:/var/lib/mysql
