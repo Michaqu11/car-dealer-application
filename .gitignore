@@ -1,6 +1,2 @@
-car-dealer-database/mysql
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+car-dealer-database/mysql/*
+!car-dealer-database/mysql/cardealerdb
