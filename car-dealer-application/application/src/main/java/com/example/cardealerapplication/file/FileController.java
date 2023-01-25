@@ -39,7 +39,7 @@ public class FileController {
             Path path = Paths.get(UPLOADED_FILES_FOLDER + multipartFile.getOriginalFilename());
             System.out.println("Request contains, File: " + filename + path + ' ' + description + ' ' + author);
             Files.write(path, bytes);
-            System.out.println("Działa?");
+            System.out.println("Działa? "+ multipartFile+ " " + description + " " + author);
             CreateFileRequest request = new CreateFileRequest(bytes, filename, description, author);
 
             File file = CreateFileRequest.dtoToEntityMapper().apply(request);

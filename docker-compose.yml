@@ -1,19 +1,76 @@
 version: "3"
 
 services:
-  app:
+  app1:
     build: ./car-dealer-application
-    container_name: app
-    ports:
-      - 8080:8080
+    environment:
+      spring.datasource.url: jdbc:mysql://mysqldb:3306/cardealerdb
+    expose:
+      - "8080:8080"
     volumes:
       - ./car-dealer-database/files/:/app/uploaded_files
+  app2:
+    build: ./car-dealer-application
+    environment:
+      spring.datasource.url: jdbc:mysql://mysqldb:3306/cardealerdb
+    expose:
+      - "8080:8080"
+    volumes:
+      - ./car-dealer-database/files/:/app/uploaded_files
+  web1:
+    build: ./web-app
+    expose:
+      - "8080:80"
+  web2:
+    build: ./web-app
+    expose:
+      - "8080:80"
+
   mysqldb:
     image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=user
+      - MYSQL_USER=user
       - MYSQL_DATABASE=cardealerdb
+    expose:
+      - 3306:3306
     ports:
       - 3306:3306
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysqldb
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:80"
+
+  proxy-web:
+    image: haproxy
+    depends_on:
+      - web1
+      - web2
+    links:
+      - web1
+      - web2
+    ports:
+      - "9300:80"
     volumes:
-      - ./car-dealer-database/mysql:/var/lib/mysql
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+
+  proxy-app:
+    image: haproxy
+    depends_on:
+      - app1
+      - app2
+    links:
+      - app1
+      - app2
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./haproxy-app.cfg:/usr/local/etc/haproxy/haproxy.cfg

@@ -1,8 +1,5 @@
 package com.example.cardealerapplication.file;
 
-import com.example.cardealerapplication.file.File;
-import com.example.cardealerapplication.salon.Salon;
-import com.example.cardealerapplication.salon.SalonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

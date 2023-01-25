@@ -1,7 +1,6 @@
 package com.example.cardealerapplication.file.dto;
 
 import com.example.cardealerapplication.file.File;
-import com.example.cardealerapplication.salon.Salon;
 import lombok.*;
 
 import java.util.List;
